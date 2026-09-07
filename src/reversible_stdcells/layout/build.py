@@ -151,11 +151,6 @@ def build(name, lib, directory):
         nx = 3*columns+3+margin
         width = math.ceil((.51*(nx-1)+.7)/.46)*.46
         terminals = {n:set(p) for n,p in device_terminals.items()}
-        # Reserve the first two M3 tracks end-to-end for the supply nets. This
-        # gives pdngen a macro-wide M3 pin to via into its vertical M4 straps
-        # without allowing a signal route to cross and short either rail.
-        reservations = {(ix, iy, 1): net for net, iy in [('VDD', 0)]
-                        for ix in range(nx)}
         geometry = {}
         for p in pins:
             net = aliases.get(p,p)
@@ -168,15 +163,15 @@ def build(name, lib, directory):
                                direction='OUTPUT' if is_output else 'INPUT',
                                use='POWER' if p=='VDD' else 'GROUND' if p=='VGND' else 'SIGNAL')
         try:
-            routes = route(terminals,nx,ny,reservations)
+            routes = route(terminals,nx,ny)
             break
         except RuntimeError:
             if margin == 1:
                 raise
     geometry['VDD']['rect_um'][0] = 0
-    geometry['VDD']['rect_um'][2] = width
+    geometry['VDD']['rect_um'][2] = 1.50
     geometry['VGND']['rect_um'][0] = 0
-    geometry['VGND']['rect_um'][2] = width
+    geometry['VGND']['rect_um'][2] = 1.50
     # Match the SKY130 HD followpin pattern: VGND at the lower boundary and
     # VDD overlapping the rail centered at y=2.72 um. These power-pin shapes
     # open matching holes in the conservative met1 obstruction below.

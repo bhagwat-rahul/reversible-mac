@@ -13,7 +13,7 @@ MACRO rev_cnot
     SHAPE ABUTMENT ;
     PORT
       LAYER met3 ;
-      RECT 0.000 0.140 8.280 0.540 ;
+      RECT 0.000 0.140 1.500 0.540 ;
       LAYER met1 ;
       RECT 0.000 2.480 1.500 3.220 ;
       RECT 0.690 3.220 1.030 4.710 ;
@@ -25,7 +25,7 @@ MACRO rev_cnot
     SHAPE ABUTMENT ;
     PORT
       LAYER met3 ;
-      RECT 0.000 0.840 8.280 1.240 ;
+      RECT 0.000 0.840 1.500 1.240 ;
       LAYER met1 ;
       RECT 0.000 0.000 8.280 0.240 ;
       RECT 0.690 0.000 1.030 1.210 ;
@@ -77,6 +77,8 @@ MACRO rev_cnot
     LAYER met2 ;
     RECT 0.000 0.000 8.280 5.440 ;
     LAYER met3 ;
+    RECT 1.800 0.000 8.280 1.240 ;
+    RECT 1.800 1.240 6.890 1.540 ;
     RECT 0.950 1.540 6.890 2.240 ;
     RECT 0.950 2.240 8.280 2.640 ;
     RECT 0.950 2.640 6.890 2.940 ;

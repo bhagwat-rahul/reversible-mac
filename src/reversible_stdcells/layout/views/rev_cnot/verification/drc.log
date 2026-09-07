@@ -3,20 +3,19 @@
 [INFO] Launching Magic DRC...
 [INFO] Launching KLayout DRC...
 ---
-[INFO] Magic DRC is clean!
+[INFO] Magic DRC errors found! Check </foss/designs/current-designs/reversible-mac/src/reversible_stdcells/layout/views/rev_cnot/verification/rev_cnot.magic.drc/rev_cnot.magic.drc.rpt>!
 [INFO] KLayout FEOL DRC is clean!
-[INFO] KLayout BEOL DRC is clean!
+[INFO] KLayout 1 BEOL DRC errors found! Check </foss/designs/current-designs/reversible-mac/src/reversible_stdcells/layout/views/rev_cnot/verification/rev_cnot.klayout.drc.beol.xml>!
 [INFO] KLayout pin check DRC is clean!
 [INFO] KLayout zero-area DRC is clean!
 ---
-CONGRATULATIONS! No DRC errors in <rev_cnot> found!
+DRC ERRORS FOUND! Please check the output files!
       .-"""""-.
     .'  _   _  '.
    /   (o) (o)   \
   |       <       |
-  |    \_____/    |
+  |     _____     |
    \             /
     '.         .'
       '-.....-'
 ---
-[DONE] Bye!
