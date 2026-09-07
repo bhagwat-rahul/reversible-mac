@@ -55,9 +55,11 @@ FPGA workflow is not configured to replace these ASIC blackboxes.
 coordinate entry is needed in the GitHub action. This is a fixed floorplan for
 the current 4/8 implementation, not an automatic placer for arbitrary widths.
 
-The 112 CNOT and 76 Toffoli macros occupy 14 rows, all orientation N, with
-1.38 µm horizontal and 1.36 µm vertical channels. Bounds are x = 4.60–154.56 µm
-and y = 5.44–99.28 µm, inside the TTSKY26c 161 × 111.52 µm tile. Standard-cell
+The 112 CNOT and 76 Toffoli macros occupy 15 rows, all orientation N, with
+1.38 µm horizontal and 1.36 µm vertical channels. Bounds are x = 4.60–144.90 µm
+and y = 5.44–106.08 µm, inside the TTSKY26c 161 × 111.52 µm tile. The right
+~11.5 µm is a continuous stdcell/PDN street so TinyTapeout’s met1-only rails
+are not cut by a full-width empty band (OpenROAD PDN-0178). Standard-cell
 exclusion halos are 0.46 µm horizontally and 0.68 µm vertically.
 
 Local LibreLane verification in IIC-OSIC-TOOLS completed through

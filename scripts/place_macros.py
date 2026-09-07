@@ -13,10 +13,15 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT/'src/macro_placement.cfg'
-# TTSKY26c SKY130 1x1 DIEAREA is 161 x 111.52 um. Stay within a smaller
-# 160 x 100 envelope too. Leave top-of-tile rows for storage/control cells.
+# TTSKY26c SKY130 1x1 DIEAREA is 161 x 111.52 um.
+# TinyTapeout turns off multilayer PDN, so only met1 followpin rails exist.
+# A full-width empty band at the top is an unrepaired PDN-0178 channel; keep
+# a right-side stdcell street so those rails stay continuous bottom to top.
 LEFT, RIGHT, BOTTOM = 4.60, 156.40, 5.44
 X_GAP, Y_GAP = 1.38, 1.36
+PDN_STREET = 10.00
+PACK_RIGHT = RIGHT - PDN_STREET
+MAX_TOP = 111.52
 
 
 def macros(netlist):
@@ -39,17 +44,21 @@ def validate(placements, cells, sizes):
     for name, (x, y, orientation) in placements.items():
         assert orientation == 'N', 'This floorplan uses unrotated macros'
         w, h = sizes[cells[name]]
-        assert LEFT-1e-6 <= x and x+w <= RIGHT+1e-6, name
-        assert BOTTOM-1e-6 <= y and y+h <= 100, name
+        assert LEFT-1e-6 <= x and x+w <= PACK_RIGHT+1e-6, name
+        assert BOTTOM-1e-6 <= y and y+h <= MAX_TOP+1e-6, name
         boxes[name] = (x, y, x+w, y+h)
     for i, (name, a) in enumerate(boxes.items()):
         for other, b in list(boxes.items())[i+1:]:
             # Check explicit channels, stronger than merely no overlapping boxes.
             assert (a[2]+X_GAP <= b[0]+1e-6 or b[2]+X_GAP <= a[0]+1e-6 or
                     a[3]+Y_GAP <= b[1]+1e-6 or b[3]+Y_GAP <= a[1]+1e-6), (name, other)
+    right = max(b[2] for b in boxes.values())
+    top = max(b[3] for b in boxes.values())
+    street = RIGHT - right
+    assert street + 1e-6 >= PDN_STREET, (right, street)
     area = sum(sizes[k][0]*sizes[k][1] for k in cells.values())
     print(f'PASS: {len(boxes)} macros; area {area:.4f} um^2; '
-          f'right {max(b[2] for b in boxes.values()):.3f}; top {max(b[3] for b in boxes.values()):.3f}')
+          f'right {right:.3f}; top {top:.3f}; pdn street {street:.3f}')
 
 
 def main():
@@ -73,7 +82,7 @@ def main():
         rows, row, used = [], [], 0.0
         for name in names:
             w, _ = sizes[cells[name]]
-            if row and used+w > RIGHT-LEFT+1e-6:
+            if row and used+w > PACK_RIGHT-LEFT+1e-6:
                 rows.append(row)
                 row, used = [], 0.0
             row.append(name)
