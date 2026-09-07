@@ -6,6 +6,9 @@
 `default_nettype none
 
 module tt_um_bhagwat_rahul_reversible_mac (
+`ifdef USE_POWER_PINS
+    inout  wire       VPWR, VGND, // Physical supplies; no change to TT signal pins
+`endif
     input  wire [7:0] ui_in,    // Dedicated inputs
     output wire [7:0] uo_out,   // Dedicated outputs
     input  wire [7:0] uio_in,   // IOs: Input path
@@ -17,6 +20,9 @@ module tt_um_bhagwat_rahul_reversible_mac (
 );
 
   reversible_mac #(.INPUT_WIDTH(4), .ACC_WIDTH(8)) u_mac (
+`ifdef USE_POWER_PINS
+      .VDD(VPWR), .VGND(VGND),
+`endif
       .clk(clk), .rst_n(rst_n),
       .valid(ena & uio_in[0]), .reverse(uio_in[1]),
       .a_in(ui_in[3:0]), .b_in(ui_in[7:4]),
