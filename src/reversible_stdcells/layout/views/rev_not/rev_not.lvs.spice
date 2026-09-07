@@ -1,0 +1,7 @@
+* NGSPICE file created from rev_not.ext - technology: sky130A
+
+.subckt rev_not VDD VGND A Y
+X0 VGND A Y VGND sky130_fd_pr__nfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X1 VDD A Y VDD sky130_fd_pr__pfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+.ends
+

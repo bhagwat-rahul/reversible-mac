@@ -1,0 +1,43 @@
+/* FUNCTIONAL/PHYSICAL IMPORT ONLY. NO TIMING OR POWER MODEL.
+ * Not usable for timing closure, buffering, sizing, or tapeout signoff. */
+library (reversible_functional_only) {
+  technology (cmos);
+  delay_model : table_lookup;
+  time_unit : "1ns";
+  voltage_unit : "1V";
+  current_unit : "1mA";
+  capacitive_load_unit (1,pf);
+  nom_voltage : 1.8;
+  nom_temperature : 27;
+  nom_process : 1;
+  cell (rev_not) {
+    area : 20.019200;
+    dont_use : true;
+    pg_pin (VDD) { voltage_name : VDD; pg_type : primary_power; }
+    pg_pin (VGND) { voltage_name : VGND; pg_type : primary_ground; }
+    pin (A) { direction : input; related_power_pin : VDD; related_ground_pin : VGND; }
+    pin (Y) { direction : output; related_power_pin : VDD; related_ground_pin : VGND; function : "!A"; }
+  }
+  cell (rev_cnot) {
+    area : 45.043200;
+    dont_use : true;
+    pg_pin (VDD) { voltage_name : VDD; pg_type : primary_power; }
+    pg_pin (VGND) { voltage_name : VGND; pg_type : primary_ground; }
+    pin (A) { direction : input; related_power_pin : VDD; related_ground_pin : VGND; }
+    pin (B) { direction : input; related_power_pin : VDD; related_ground_pin : VGND; }
+    pin (A_OUT) { direction : output; related_power_pin : VDD; related_ground_pin : VGND; function : "A"; }
+    pin (B_OUT) { direction : output; related_power_pin : VDD; related_ground_pin : VGND; function : "A ^ B"; }
+  }
+  cell (rev_toffoli) {
+    area : 62.560000;
+    dont_use : true;
+    pg_pin (VDD) { voltage_name : VDD; pg_type : primary_power; }
+    pg_pin (VGND) { voltage_name : VGND; pg_type : primary_ground; }
+    pin (A) { direction : input; related_power_pin : VDD; related_ground_pin : VGND; }
+    pin (B) { direction : input; related_power_pin : VDD; related_ground_pin : VGND; }
+    pin (C) { direction : input; related_power_pin : VDD; related_ground_pin : VGND; }
+    pin (A_OUT) { direction : output; related_power_pin : VDD; related_ground_pin : VGND; function : "A"; }
+    pin (B_OUT) { direction : output; related_power_pin : VDD; related_ground_pin : VGND; function : "B"; }
+    pin (C_OUT) { direction : output; related_power_pin : VDD; related_ground_pin : VGND; function : "C ^ (A & B)"; }
+  }
+}

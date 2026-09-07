@@ -1,0 +1,365 @@
+{
+  "creator": "Yosys 0.68 (git sha1 38e001a6f, Release, GNU /usr/bin/c++ 13.3.0)",
+  "modules": {
+    "rev_cnot": {
+      "attributes": {
+        "blackbox": "00000000000000000000000000000001",
+        "src": "reversible_cells.blackbox.v:13.16-20.10"
+      },
+      "ports": {
+        "VDD": {
+          "direction": "inout",
+          "bits": [ 2 ]
+        },
+        "VGND": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "B": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "A_OUT": {
+          "direction": "output",
+          "bits": [ 6 ]
+        },
+        "B_OUT": {
+          "direction": "output",
+          "bits": [ 7 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "reversible_cells.blackbox.v:17.16-17.17"
+          }
+        },
+        "A_OUT": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "reversible_cells.blackbox.v:18.17-18.22"
+          }
+        },
+        "B": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "reversible_cells.blackbox.v:17.19-17.20"
+          }
+        },
+        "B_OUT": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "reversible_cells.blackbox.v:18.24-18.29"
+          }
+        },
+        "VDD": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "reversible_cells.blackbox.v:15.16-15.19"
+          }
+        },
+        "VGND": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "reversible_cells.blackbox.v:15.21-15.25"
+          }
+        }
+      }
+    },
+    "rev_not": {
+      "attributes": {
+        "blackbox": "00000000000000000000000000000001",
+        "src": "reversible_cells.blackbox.v:4.16-11.10"
+      },
+      "ports": {
+        "VDD": {
+          "direction": "inout",
+          "bits": [ 2 ]
+        },
+        "VGND": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "Y": {
+          "direction": "output",
+          "bits": [ 5 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "reversible_cells.blackbox.v:8.16-8.17"
+          }
+        },
+        "VDD": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "reversible_cells.blackbox.v:6.16-6.19"
+          }
+        },
+        "VGND": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "reversible_cells.blackbox.v:6.21-6.25"
+          }
+        },
+        "Y": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "reversible_cells.blackbox.v:9.17-9.18"
+          }
+        }
+      }
+    },
+    "rev_toffoli": {
+      "attributes": {
+        "blackbox": "00000000000000000000000000000001",
+        "src": "reversible_cells.blackbox.v:22.16-29.10"
+      },
+      "ports": {
+        "VDD": {
+          "direction": "inout",
+          "bits": [ 2 ]
+        },
+        "VGND": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        },
+        "A": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "B": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "C": {
+          "direction": "input",
+          "bits": [ 6 ]
+        },
+        "A_OUT": {
+          "direction": "output",
+          "bits": [ 7 ]
+        },
+        "B_OUT": {
+          "direction": "output",
+          "bits": [ 8 ]
+        },
+        "C_OUT": {
+          "direction": "output",
+          "bits": [ 9 ]
+        }
+      },
+      "cells": {
+      },
+      "netnames": {
+        "A": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "reversible_cells.blackbox.v:26.16-26.17"
+          }
+        },
+        "A_OUT": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "src": "reversible_cells.blackbox.v:27.17-27.22"
+          }
+        },
+        "B": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "reversible_cells.blackbox.v:26.19-26.20"
+          }
+        },
+        "B_OUT": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "src": "reversible_cells.blackbox.v:27.24-27.29"
+          }
+        },
+        "C": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "reversible_cells.blackbox.v:26.22-26.23"
+          }
+        },
+        "C_OUT": {
+          "hide_name": 0,
+          "bits": [ 9 ],
+          "attributes": {
+            "src": "reversible_cells.blackbox.v:27.31-27.36"
+          }
+        },
+        "VDD": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "reversible_cells.blackbox.v:24.16-24.19"
+          }
+        },
+        "VGND": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "reversible_cells.blackbox.v:24.21-24.25"
+          }
+        }
+      }
+    },
+    "reversible_cells_smoke": {
+      "attributes": {
+        "top": "00000000000000000000000000000001",
+        "src": "smoke.v:3.1-30.10"
+      },
+      "ports": {
+        "abc": {
+          "direction": "input",
+          "bits": [ 2, 3, 4 ]
+        },
+        "result": {
+          "direction": "output",
+          "bits": [ 5, 6, 7, 8, 9, 10 ]
+        }
+      },
+      "cells": {
+        "u_cnot": {
+          "hide_name": 0,
+          "type": "rev_cnot",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "smoke.v:17.14-22.6"
+          },
+          "port_directions": {
+            "A": "input",
+            "A_OUT": "output",
+            "B": "input",
+            "B_OUT": "output",
+            "VDD": "inout",
+            "VGND": "inout"
+          },
+          "connections": {
+            "A": [ 4 ],
+            "A_OUT": [ 9 ],
+            "B": [ 3 ],
+            "B_OUT": [ 8 ],
+            "VDD": [ "1" ],
+            "VGND": [ "0" ]
+          }
+        },
+        "u_not": {
+          "hide_name": 0,
+          "type": "rev_not",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "smoke.v:11.13-16.6"
+          },
+          "port_directions": {
+            "A": "input",
+            "VDD": "inout",
+            "VGND": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 4 ],
+            "VDD": [ "1" ],
+            "VGND": [ "0" ],
+            "Y": [ 10 ]
+          }
+        },
+        "u_toffoli": {
+          "hide_name": 0,
+          "type": "rev_toffoli",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "smoke.v:23.17-29.6"
+          },
+          "port_directions": {
+            "A": "input",
+            "A_OUT": "output",
+            "B": "input",
+            "B_OUT": "output",
+            "C": "input",
+            "C_OUT": "output",
+            "VDD": "inout",
+            "VGND": "inout"
+          },
+          "connections": {
+            "A": [ 4 ],
+            "A_OUT": [ 7 ],
+            "B": [ 3 ],
+            "B_OUT": [ 6 ],
+            "C": [ 2 ],
+            "C_OUT": [ 5 ],
+            "VDD": [ "1" ],
+            "VGND": [ "0" ]
+          }
+        }
+      },
+      "netnames": {
+        "VDD": {
+          "hide_name": 0,
+          "bits": [ "1" ],
+          "attributes": {
+            "src": "smoke.v:8.16-8.16"
+          }
+        },
+        "VGND": {
+          "hide_name": 0,
+          "bits": [ "0" ],
+          "attributes": {
+            "src": "smoke.v:9.17-9.17"
+          }
+        },
+        "abc": {
+          "hide_name": 0,
+          "bits": [ 2, 3, 4 ],
+          "attributes": {
+            "src": "smoke.v:4.22-4.25"
+          }
+        },
+        "result": {
+          "hide_name": 0,
+          "bits": [ 5, 6, 7, 8, 9, 10 ],
+          "attributes": {
+            "src": "smoke.v:5.23-5.29"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+VERSION 5.8 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+MACRO rev_not
+  CLASS BLOCK ;
+  ORIGIN 0 0 ;
+  FOREIGN rev_not 0 0 ;
+  SIZE 3.680 BY 5.440 ;
+  SYMMETRY X Y ;
+  PIN VDD
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met3 ;
+      RECT 0.050 0.140 0.650 0.540 ;
+    END
+  END VDD
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met3 ;
+      RECT 0.050 0.840 0.650 1.240 ;
+    END
+  END VGND
+  PIN A
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+      RECT 0.050 1.540 0.650 1.940 ;
+    END
+  END A
+  PIN Y
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+      RECT 2.600 2.240 3.200 2.640 ;
+    END
+  END Y
+  OBS
+    LAYER li1 ;
+    RECT 0.000 0.000 3.680 5.440 ;
+    LAYER met1 ;
+    RECT 0.000 0.000 3.680 5.440 ;
+    LAYER met2 ;
+    RECT 0.000 0.000 3.680 5.440 ;
+    LAYER met3 ;
+    RECT 0.950 0.000 3.680 1.940 ;
+    RECT 0.950 1.940 2.300 2.240 ;
+    RECT 0.000 2.240 2.300 2.940 ;
+    RECT 0.000 2.940 3.680 5.440 ;
+  END
+END rev_not
+END LIBRARY

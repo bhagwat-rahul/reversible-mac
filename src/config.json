@@ -17,7 +17,29 @@
 
   "//": "CLOCK_PERIOD - Increase this in case you are getting setup time violations.",
   "//": "The value is in nanoseconds, so 20ns == 50MHz.",
-  "CLOCK_PERIOD": 20,
+  "CLOCK_PERIOD": 10000,
+
+  "//": "100 kHz is an unverified bring-up target, NOT a timing guarantee.",
+  "//": "Custom hard macros: leave timing black-boxed until characterized Liberty exists.",
+  "//": "Do not substitute the Boolean simulation models or functional-only Liberty for signoff.",
+  "EXTRA_VERILOG_MODELS": [
+    "dir::reversible_stdcells/layout/reversible_cells.blackbox.v"
+  ],
+  "MACROS": {
+    "rev_not": {
+      "gds": ["dir::reversible_stdcells/layout/views/rev_not/rev_not.gds"],
+      "lef": ["dir::reversible_stdcells/layout/views/rev_not/rev_not.lef"]
+    },
+    "rev_cnot": {
+      "gds": ["dir::reversible_stdcells/layout/views/rev_cnot/rev_cnot.gds"],
+      "lef": ["dir::reversible_stdcells/layout/views/rev_cnot/rev_cnot.lef"]
+    },
+    "rev_toffoli": {
+      "gds": ["dir::reversible_stdcells/layout/views/rev_toffoli/rev_toffoli.gds"],
+      "lef": ["dir::reversible_stdcells/layout/views/rev_toffoli/rev_toffoli.lef"]
+    }
+  },
+  "PDN_MACRO_CONNECTIONS": ["u_mac\\..* VPWR VGND VDD VGND"],
 
   "//": "Hold slack margin - Increase them in case you are getting hold violations.",
   "PL_RESIZER_HOLD_SLACK_MARGIN": 0.1,

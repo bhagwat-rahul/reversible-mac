@@ -1,0 +1,88 @@
+{
+  "cell": "rev_not",
+  "width_um": 3.68,
+  "height_um": 5.44,
+  "pins": {
+    "VDD": {
+      "net": "VDD",
+      "layer": "met3",
+      "rect_um": [
+        0.04999999999999999,
+        0.14,
+        0.6499999999999999,
+        0.54
+      ],
+      "direction": "INPUT",
+      "use": "POWER"
+    },
+    "VGND": {
+      "net": "VGND",
+      "layer": "met3",
+      "rect_um": [
+        0.04999999999999999,
+        0.8400000000000001,
+        0.6499999999999999,
+        1.24
+      ],
+      "direction": "INPUT",
+      "use": "GROUND"
+    },
+    "A": {
+      "net": "A",
+      "layer": "met3",
+      "rect_um": [
+        0.04999999999999999,
+        1.54,
+        0.6499999999999999,
+        1.94
+      ],
+      "direction": "INPUT",
+      "use": "SIGNAL"
+    },
+    "Y": {
+      "net": "Y",
+      "layer": "met3",
+      "rect_um": [
+        2.6,
+        2.2399999999999993,
+        3.1999999999999997,
+        2.6399999999999997
+      ],
+      "direction": "OUTPUT",
+      "use": "SIGNAL"
+    }
+  },
+  "transistors": [
+    {
+      "name": "XMN",
+      "nodes": [
+        "Y",
+        "A",
+        "VGND",
+        "VGND"
+      ],
+      "model": "sky130_fd_pr__nfet_01v8",
+      "w": 1.0,
+      "l": 0.15,
+      "x_um": 1.73,
+      "y_um": 0.55,
+      "mirror_x": false
+    },
+    {
+      "name": "XMP",
+      "nodes": [
+        "Y",
+        "A",
+        "VDD",
+        "VDD"
+      ],
+      "model": "sky130_fd_pr__pfet_01v8",
+      "w": 1.0,
+      "l": 0.15,
+      "x_um": 1.73,
+      "y_um": 4.9,
+      "mirror_x": true
+    }
+  ],
+  "physical_aliases": {}
+}

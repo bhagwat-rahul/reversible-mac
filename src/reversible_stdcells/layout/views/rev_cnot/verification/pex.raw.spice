@@ -1,0 +1,32 @@
+* NGSPICE file created from rev_cnot.ext - technology: sky130A
+
+.subckt rev_cnot VDD VGND A B A_OUT B_OUT
+X0 VDD B a_652_110# VDD sky130_fd_pr__pfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X1 VGND A_OUT a_346_110# VGND sky130_fd_pr__nfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+V0 A_OUT A 0.0
+X2 VGND B a_652_110# VGND sky130_fd_pr__nfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X3 B A_OUT B_OUT VDD sky130_fd_pr__pfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X4 a_652_110# a_346_110# B_OUT VDD sky130_fd_pr__pfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X5 B a_346_110# B_OUT VGND sky130_fd_pr__nfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X6 a_652_110# A_OUT B_OUT VGND sky130_fd_pr__nfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X7 VDD A_OUT a_346_110# VDD sky130_fd_pr__pfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+C0 VDD B_OUT 0.12084f
+C1 a_652_110# a_346_110# 0.43276f
+C2 VDD B 0.26492f
+C3 VDD A_OUT 0.39645f
+C4 B_OUT a_346_110# 0.34975f
+C5 B a_346_110# 0.28007f
+C6 A_OUT a_346_110# 0.73878f
+C7 VDD a_346_110# 0.59774f
+C8 a_652_110# B_OUT 0.39022f
+C9 a_652_110# B 0.15172f
+C10 a_652_110# A_OUT 0.37883f
+C11 B B_OUT 0.68537f
+C12 A_OUT B_OUT 0.38645f
+C13 A_OUT B 0.6738f
+C14 VDD a_652_110# 0.21886f
+C15 B_OUT VGND 1.16854f
+C16 VDD VGND 3.35107f
+C17 a_652_110# VGND 2.20769f
+.ends
+

@@ -1,0 +1,289 @@
+{
+  "cell": "rev_toffoli",
+  "width_um": 11.5,
+  "height_um": 5.44,
+  "pins": {
+    "VDD": {
+      "net": "VDD",
+      "layer": "met3",
+      "rect_um": [
+        0.04999999999999999,
+        0.14,
+        0.6499999999999999,
+        0.54
+      ],
+      "direction": "INPUT",
+      "use": "POWER"
+    },
+    "VGND": {
+      "net": "VGND",
+      "layer": "met3",
+      "rect_um": [
+        0.04999999999999999,
+        0.8400000000000001,
+        0.6499999999999999,
+        1.24
+      ],
+      "direction": "INPUT",
+      "use": "GROUND"
+    },
+    "A": {
+      "net": "A",
+      "layer": "met3",
+      "rect_um": [
+        0.04999999999999999,
+        1.54,
+        0.6499999999999999,
+        1.94
+      ],
+      "direction": "INPUT",
+      "use": "SIGNAL"
+    },
+    "B": {
+      "net": "B",
+      "layer": "met3",
+      "rect_um": [
+        0.04999999999999999,
+        2.2399999999999993,
+        0.6499999999999999,
+        2.6399999999999997
+      ],
+      "direction": "INPUT",
+      "use": "SIGNAL"
+    },
+    "C": {
+      "net": "C",
+      "layer": "met3",
+      "rect_um": [
+        0.04999999999999999,
+        2.9399999999999995,
+        0.6499999999999999,
+        3.34
+      ],
+      "direction": "INPUT",
+      "use": "SIGNAL"
+    },
+    "A_OUT": {
+      "net": "A",
+      "layer": "met3",
+      "rect_um": [
+        10.76,
+        1.54,
+        11.360000000000001,
+        1.94
+      ],
+      "direction": "OUTPUT",
+      "use": "SIGNAL"
+    },
+    "B_OUT": {
+      "net": "B",
+      "layer": "met3",
+      "rect_um": [
+        10.76,
+        2.2399999999999993,
+        11.360000000000001,
+        2.6399999999999997
+      ],
+      "direction": "OUTPUT",
+      "use": "SIGNAL"
+    },
+    "C_OUT": {
+      "net": "C_OUT",
+      "layer": "met3",
+      "rect_um": [
+        10.76,
+        3.6399999999999997,
+        11.360000000000001,
+        4.04
+      ],
+      "direction": "OUTPUT",
+      "use": "SIGNAL"
+    }
+  },
+  "transistors": [
+    {
+      "name": "XMNA",
+      "nodes": [
+        "T_BAR",
+        "A",
+        "NAND_MID",
+        "VGND"
+      ],
+      "model": "sky130_fd_pr__nfet_01v8",
+      "w": 2.0,
+      "l": 0.15,
+      "x_um": 1.73,
+      "y_um": 0.55,
+      "mirror_x": false
+    },
+    {
+      "name": "XMNB",
+      "nodes": [
+        "NAND_MID",
+        "B",
+        "VGND",
+        "VGND"
+      ],
+      "model": "sky130_fd_pr__nfet_01v8",
+      "w": 2.0,
+      "l": 0.15,
+      "x_um": 3.2600000000000002,
+      "y_um": 0.55,
+      "mirror_x": false
+    },
+    {
+      "name": "XMTN",
+      "nodes": [
+        "T",
+        "T_BAR",
+        "VGND",
+        "VGND"
+      ],
+      "model": "sky130_fd_pr__nfet_01v8",
+      "w": 1.0,
+      "l": 0.15,
+      "x_um": 4.789999999999999,
+      "y_um": 0.55,
+      "mirror_x": false
+    },
+    {
+      "name": "XMCN",
+      "nodes": [
+        "C_BAR",
+        "C",
+        "VGND",
+        "VGND"
+      ],
+      "model": "sky130_fd_pr__nfet_01v8",
+      "w": 1.0,
+      "l": 0.15,
+      "x_um": 6.319999999999999,
+      "y_um": 0.55,
+      "mirror_x": false
+    },
+    {
+      "name": "XMT0N",
+      "nodes": [
+        "C_OUT",
+        "T_BAR",
+        "C",
+        "VGND"
+      ],
+      "model": "sky130_fd_pr__nfet_01v8",
+      "w": 1.0,
+      "l": 0.15,
+      "x_um": 7.85,
+      "y_um": 0.55,
+      "mirror_x": false
+    },
+    {
+      "name": "XMT1N",
+      "nodes": [
+        "C_OUT",
+        "T",
+        "C_BAR",
+        "VGND"
+      ],
+      "model": "sky130_fd_pr__nfet_01v8",
+      "w": 1.0,
+      "l": 0.15,
+      "x_um": 9.379999999999999,
+      "y_um": 0.55,
+      "mirror_x": false
+    },
+    {
+      "name": "XMPA",
+      "nodes": [
+        "T_BAR",
+        "A",
+        "VDD",
+        "VDD"
+      ],
+      "model": "sky130_fd_pr__pfet_01v8",
+      "w": 1.0,
+      "l": 0.15,
+      "x_um": 1.73,
+      "y_um": 4.9,
+      "mirror_x": true
+    },
+    {
+      "name": "XMPB",
+      "nodes": [
+        "T_BAR",
+        "B",
+        "VDD",
+        "VDD"
+      ],
+      "model": "sky130_fd_pr__pfet_01v8",
+      "w": 1.0,
+      "l": 0.15,
+      "x_um": 3.2600000000000002,
+      "y_um": 4.9,
+      "mirror_x": true
+    },
+    {
+      "name": "XMTP",
+      "nodes": [
+        "T",
+        "T_BAR",
+        "VDD",
+        "VDD"
+      ],
+      "model": "sky130_fd_pr__pfet_01v8",
+      "w": 1.0,
+      "l": 0.15,
+      "x_um": 4.789999999999999,
+      "y_um": 4.9,
+      "mirror_x": true
+    },
+    {
+      "name": "XMCP",
+      "nodes": [
+        "C_BAR",
+        "C",
+        "VDD",
+        "VDD"
+      ],
+      "model": "sky130_fd_pr__pfet_01v8",
+      "w": 1.0,
+      "l": 0.15,
+      "x_um": 6.319999999999999,
+      "y_um": 4.9,
+      "mirror_x": true
+    },
+    {
+      "name": "XMT0P",
+      "nodes": [
+        "C_OUT",
+        "T",
+        "C",
+        "VDD"
+      ],
+      "model": "sky130_fd_pr__pfet_01v8",
+      "w": 1.0,
+      "l": 0.15,
+      "x_um": 7.85,
+      "y_um": 4.9,
+      "mirror_x": true
+    },
+    {
+      "name": "XMT1P",
+      "nodes": [
+        "C_OUT",
+        "T_BAR",
+        "C_BAR",
+        "VDD"
+      ],
+      "model": "sky130_fd_pr__pfet_01v8",
+      "w": 1.0,
+      "l": 0.15,
+      "x_um": 9.379999999999999,
+      "y_um": 4.9,
+      "mirror_x": true
+    }
+  ],
+  "physical_aliases": {
+    "A_OUT": "A",
+    "B_OUT": "B"
+  }
+}

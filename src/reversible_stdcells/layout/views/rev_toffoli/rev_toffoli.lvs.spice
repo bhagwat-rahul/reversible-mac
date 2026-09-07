@@ -1,0 +1,19 @@
+* NGSPICE file created from rev_toffoli.ext - technology: sky130A
+
+.subckt rev_toffoli VDD VGND A B C A_OUT B_OUT C_OUT
+X0 VDD B a_346_110# VDD sky130_fd_pr__pfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X1 a_436_110# A a_346_110# VGND sky130_fd_pr__nfet_01v8 ad=0.6 pd=4.6 as=0.6 ps=4.6 w=2 l=0.15
+V0 B B_OUT 0
+V1 A A_OUT 0
+X2 VGND B a_436_110# VGND sky130_fd_pr__nfet_01v8 ad=0.6 pd=4.6 as=0.6 ps=4.6 w=2 l=0.15
+X3 VDD a_346_110# a_958_110# VDD sky130_fd_pr__pfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X4 VDD C a_1264_110# VDD sky130_fd_pr__pfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X5 VGND a_346_110# a_958_110# VGND sky130_fd_pr__nfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X6 C a_958_110# C_OUT VDD sky130_fd_pr__pfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X7 VGND C a_1264_110# VGND sky130_fd_pr__nfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X8 a_1264_110# a_346_110# C_OUT VDD sky130_fd_pr__pfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X9 C a_346_110# C_OUT VGND sky130_fd_pr__nfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X10 VDD A a_346_110# VDD sky130_fd_pr__pfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X11 a_1264_110# a_958_110# C_OUT VGND sky130_fd_pr__nfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+.ends
+

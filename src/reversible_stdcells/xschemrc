@@ -1,0 +1,7 @@
+# Run iic-pdk sky130A before launching Xschem.
+source $env(PDK_ROOT)/sky130A/libs.tech/xschem/xschemrc
+set reversible_cells_dir [file dirname [file normalize [info script]]]
+foreach cell {rev_not rev_cnot rev_toffoli} {
+    append XSCHEM_LIBRARY_PATH :$reversible_cells_dir/$cell
+}
+set XSCHEM_START_WINDOW {}

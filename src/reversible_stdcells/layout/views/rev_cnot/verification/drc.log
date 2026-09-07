@@ -1,0 +1,22 @@
+[INFO] Running DRC of </foss/designs/current-designs/reversible-mac/src/reversible_stdcells/layout/views/rev_cnot/rev_cnot.gds>.
+[INFO] Results are put into </foss/designs/current-designs/reversible-mac/src/reversible_stdcells/layout/views/rev_cnot/verification>.
+[INFO] Launching Magic DRC...
+[INFO] Launching KLayout DRC...
+---
+[INFO] Magic DRC is clean!
+[INFO] KLayout FEOL DRC is clean!
+[INFO] KLayout BEOL DRC is clean!
+[INFO] KLayout pin check DRC is clean!
+[INFO] KLayout zero-area DRC is clean!
+---
+CONGRATULATIONS! No DRC errors in <rev_cnot> found!
+      .-"""""-.
+    .'  _   _  '.
+   /   (o) (o)   \
+  |       <       |
+  |    \_____/    |
+   \             /
+    '.         .'
+      '-.....-'
+---
+[DONE] Bye!

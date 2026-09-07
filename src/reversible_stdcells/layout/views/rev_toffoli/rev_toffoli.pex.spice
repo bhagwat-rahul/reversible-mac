@@ -1,0 +1,58 @@
+* NGSPICE file created from rev_toffoli.ext - technology: sky130A
+
+.subckt rev_toffoli VDD VGND A B C A_OUT B_OUT C_OUT
+X0 VDD B a_346_110# VDD sky130_fd_pr__pfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X1 a_436_110# A a_346_110# VGND sky130_fd_pr__nfet_01v8 ad=0.6 pd=4.6 as=0.6 ps=4.6 w=2 l=0.15
+V0 B B_OUT 0
+V1 A A_OUT 0
+X2 VGND B a_436_110# VGND sky130_fd_pr__nfet_01v8 ad=0.6 pd=4.6 as=0.6 ps=4.6 w=2 l=0.15
+X3 VDD a_346_110# a_958_110# VDD sky130_fd_pr__pfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X4 VDD C a_1264_110# VDD sky130_fd_pr__pfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X5 VGND a_346_110# a_958_110# VGND sky130_fd_pr__nfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X6 C a_958_110# C_OUT VDD sky130_fd_pr__pfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X7 VGND C a_1264_110# VGND sky130_fd_pr__nfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X8 a_1264_110# a_346_110# C_OUT VDD sky130_fd_pr__pfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X9 C a_346_110# C_OUT VGND sky130_fd_pr__nfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X10 VDD A a_346_110# VDD sky130_fd_pr__pfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+X11 a_1264_110# a_958_110# C_OUT VGND sky130_fd_pr__nfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
+C0 a_346_110# C_OUT 0.41808f
+C1 a_346_110# C 0.34744f
+C2 a_346_110# a_436_110# 0.21728f
+C3 a_346_110# a_1264_110# 0.49517f
+C4 VDD C_OUT 0.14771f
+C5 a_346_110# a_958_110# 0.48044f
+C6 VDD C 0.64143f
+C7 VDD a_436_110# 0.01183f
+C8 VDD a_1264_110# 0.21878f
+C9 A a_346_110# 0.38559f
+C10 VDD a_958_110# 0.36376f
+C11 C_OUT B 0.084f
+C12 C B 0.50679f
+C13 A VDD 0.25541f
+C14 B a_436_110# 0.05236f
+C15 a_1264_110# B 0.0687f
+C16 a_958_110# B 0.51851f
+C17 A B 0.74304f
+C18 a_346_110# VDD 1.29304f
+C19 C C_OUT 0.67143f
+C20 a_346_110# B 0.19827f
+C21 C_OUT a_1264_110# 0.43417f
+C22 C a_436_110# 0.00231f
+C23 C a_1264_110# 0.22882f
+C24 a_958_110# C_OUT 0.32776f
+C25 a_1264_110# a_436_110# 0.00484f
+C26 VDD B 0.2299f
+C27 C a_958_110# 0.51237f
+C28 a_958_110# a_436_110# 0.00492f
+C29 A C_OUT 0.06249f
+C30 a_958_110# a_1264_110# 0.23323f
+C31 A C 0.18081f
+C32 A a_436_110# 0.22233f
+C33 A a_1264_110# 0.27903f
+C34 A a_958_110# 0.09806f
+C35 C_OUT VGND 1.16691f
+C36 VDD VGND 5.06506f
+C37 a_436_110# VGND 0.75008f
+C38 a_1264_110# VGND 1.271f
+.ends
+

@@ -1,12 +1,14 @@
-# Sample testbench for a Tiny Tapeout project
+# Reversible MAC top-level testbench
 
-This is a sample testbench for a Tiny Tapeout project. It uses [cocotb](https://docs.cocotb.org/en/stable/) to drive the DUT and check the outputs.
-See below to get started or for more information, check the [website](https://tinytapeout.com/hdl/testing/).
+The cocotb test drives the fixed TinyTapeout interface of `tt_um_reversible_mac`.
+It covers all 4-bit operand pairs, add/subtract cancellation, wraparound,
+valid/ena hold, synchronous reset priority and input-only bidirectional pins.
 
 ## Setting up
 
-1. Edit [Makefile](Makefile) and modify `PROJECT_SOURCES` to point to your Verilog files.
-2. Edit [tb.v](tb.v) and replace `tt_um_example` with your module name.
+Install `requirements.txt` and Icarus, or use the existing IIC-OSIC-TOOLS
+container. Run `iic-pdk sky130A` in each new container shell. The Makefile
+includes the two project RTL files and the simulation-only custom cell models.
 
 ## How to run
 
@@ -16,7 +18,10 @@ To run the RTL simulation:
 make -B
 ```
 
-To run gatelevel simulation, first harden your project and copy `../runs/wokwi/results/final/verilog/gl/{your_module_name}.v` to `gate_level_netlist.v`.
+To run gate-level simulation, first complete hardening and copy the final
+powered `tt_um_reversible_mac` netlist to `gate_level_netlist.v`. The ordinary
+SKY130 library and the powered Boolean custom-cell models are loaded by the
+Makefile. This checks connectivity/function, not custom-cell timing signoff.
 
 Then run:
 

@@ -1,0 +1,90 @@
+VERSION 5.8 ;
+BUSBITCHARS "[]" ;
+DIVIDERCHAR "/" ;
+MACRO rev_toffoli
+  CLASS BLOCK ;
+  ORIGIN 0 0 ;
+  FOREIGN rev_toffoli 0 0 ;
+  SIZE 11.500 BY 5.440 ;
+  SYMMETRY X Y ;
+  PIN VDD
+    DIRECTION INOUT ;
+    USE POWER ;
+    PORT
+      LAYER met3 ;
+      RECT 0.050 0.140 0.650 0.540 ;
+    END
+  END VDD
+  PIN VGND
+    DIRECTION INOUT ;
+    USE GROUND ;
+    PORT
+      LAYER met3 ;
+      RECT 0.050 0.840 0.650 1.240 ;
+    END
+  END VGND
+  PIN A
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+      RECT 0.050 1.540 0.650 1.940 ;
+    END
+  END A
+  PIN B
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+      RECT 0.050 2.240 0.650 2.640 ;
+    END
+  END B
+  PIN C
+    DIRECTION INPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+      RECT 0.050 2.940 0.650 3.340 ;
+    END
+  END C
+  PIN A_OUT
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+      RECT 10.760 1.540 11.360 1.940 ;
+    END
+  END A_OUT
+  PIN B_OUT
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+      RECT 10.760 2.240 11.360 2.640 ;
+    END
+  END B_OUT
+  PIN C_OUT
+    DIRECTION OUTPUT ;
+    USE SIGNAL ;
+    PORT
+      LAYER met3 ;
+      RECT 10.760 3.640 11.360 4.040 ;
+    END
+  END C_OUT
+  OBS
+    LAYER li1 ;
+    RECT 0.000 0.000 11.500 5.440 ;
+    LAYER met1 ;
+    RECT 0.000 0.000 11.500 5.440 ;
+    LAYER met2 ;
+    RECT 0.000 0.000 11.500 5.440 ;
+    LAYER met3 ;
+    RECT 0.950 0.000 11.500 1.240 ;
+    RECT 0.950 1.240 10.460 2.940 ;
+    RECT 0.950 2.940 11.500 3.340 ;
+    RECT 0.950 3.340 10.460 3.640 ;
+    RECT 0.000 3.640 10.460 4.340 ;
+    RECT 0.000 4.340 11.500 5.440 ;
+  END
+END rev_toffoli
+END LIBRARY
