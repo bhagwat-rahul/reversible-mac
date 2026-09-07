@@ -39,6 +39,11 @@
       "lef": ["dir::reversible_stdcells/layout/views/rev_toffoli/rev_toffoli.lef"]
     }
   },
+  "MACRO_PLACEMENT_CFG": "dir::macro_placement.cfg",
+  "//": "Small-cell floorplan: channels are 1.38um horizontal / 1.36um vertical.",
+  "//": "Reserve standard-cell exclusion halos without the default 10um macro halos.",
+  "FP_MACRO_HORIZONTAL_HALO": 0.46,
+  "FP_MACRO_VERTICAL_HALO": 0.68,
   "PDN_MACRO_CONNECTIONS": ["u_mac\\..* VPWR VGND VDD VGND"],
 
   "//": "Hold slack margin - Increase them in case you are getting hold violations.",

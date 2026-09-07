@@ -27,7 +27,7 @@ module tb ();
   wire VGND = 1'b0;
 `endif
 
-  tt_um_reversible_mac user_project (
+  tt_um_bhagwat_rahul_reversible_mac user_project (
 
       // Include power ports for the Gate Level test:
 `ifdef GL_TEST
