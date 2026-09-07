@@ -1,4 +1,4 @@
-** sch_path: /foss/designs/current-designs/reversible-circuit/reversible_stdcells/rev_toffoli/rev_toffoli.sch
+** sch_path: /foss/designs/current-designs/reversible-mac/src/reversible_stdcells/rev_toffoli/rev_toffoli.sch
 .subckt rev_toffoli VDD VGND A B C A_OUT B_OUT C_OUT
 *.iopin VDD
 *.iopin VGND

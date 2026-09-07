@@ -1,4 +1,4 @@
-** sch_path: /foss/designs/current-designs/reversible-circuit/reversible_stdcells/rev_not/rev_not.sch
+** sch_path: /foss/designs/current-designs/reversible-mac/src/reversible_stdcells/rev_not/rev_not.sch
 .subckt rev_not VDD VGND A Y
 *.iopin VDD
 *.iopin VGND

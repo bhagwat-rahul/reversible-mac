@@ -3,7 +3,7 @@
 
 Run in IIC-OSIC-TOOLS after iic-pdk sky130A. Uses installed SKY130 PCells
 in facing NMOS/PMOS rows, shared body taps, and routed M2/M3 interconnect.
-These are 5.44 um BLOCK macros, not abuttable single-height standard cells.
+These are 5.44 um BLOCK macros with double-height met1 supply rails.
 """
 import json
 import math
@@ -93,6 +93,13 @@ def build(name, lib, directory):
     macro = Macro(name)
     positions = []
     terminals = {}
+    # Followpin-aligned met1 access plus straps onto the body-tap landings at
+    # x=0.86 um. Toffoli 2 um NMOS gate metal reaches y=2.90 at x>=1.71, so
+    # the VDD followpin landing stays in the tap column.
+    power_rails = {
+        'VDD': [[0, 2.48, 1.50, 3.22], [.69, 3.22, 1.03, 4.71]],
+        'VGND': [[0, 0, None, .24], [.69, 0, 1.03, 1.21]],
+    }
 
     def point(ix, iy):
         return .35+.51*ix, .34+.7*iy
@@ -144,6 +151,11 @@ def build(name, lib, directory):
         nx = 3*columns+3+margin
         width = math.ceil((.51*(nx-1)+.7)/.46)*.46
         terminals = {n:set(p) for n,p in device_terminals.items()}
+        # Reserve the first two M3 tracks end-to-end for the supply nets. This
+        # gives pdngen a macro-wide M3 pin to via into its vertical M4 straps
+        # without allowing a signal route to cross and short either rail.
+        reservations = {(ix, iy, 1): net for net, iy in [('VDD', 0), ('VGND', 1)]
+                        for ix in range(nx)}
         geometry = {}
         for p in pins:
             net = aliases.get(p,p)
@@ -156,11 +168,23 @@ def build(name, lib, directory):
                                direction='OUTPUT' if is_output else 'INPUT',
                                use='POWER' if p=='VDD' else 'GROUND' if p=='VGND' else 'SIGNAL')
         try:
-            routes = route(terminals,nx,ny)
+            routes = route(terminals,nx,ny,reservations)
             break
         except RuntimeError:
             if margin == 1:
                 raise
+    geometry['VDD']['rect_um'][0] = 0
+    geometry['VDD']['rect_um'][2] = width
+    geometry['VGND']['rect_um'][0] = 0
+    geometry['VGND']['rect_um'][2] = width
+    # Match the SKY130 HD followpin pattern: VGND at the lower boundary and
+    # VDD overlapping the rail centered at y=2.72 um. These power-pin shapes
+    # open matching holes in the conservative met1 obstruction below.
+    for net, rails in power_rails.items():
+        for rail in rails:
+            if rail[2] is None:
+                rail[2] = width
+            macro.box('met1', *rail)
     macro.box((64,20),.18,3.18,width-.18,5.28)
     for p, info in geometry.items():
         box = info['rect_um']
@@ -186,19 +210,33 @@ def build(name, lib, directory):
     macro.layout.write(str(path/(name+'.gds')))
     macro.layout.write(str(path/(name+'.oas')))
     metadata = dict(cell=name,width_um=width,height_um=height,pins=geometry,
+                    power_rails=power_rails,
                     transistors=positions,physical_aliases=aliases)
     (path/'geometry.json').write_text(json.dumps(metadata,indent=2)+'\n')
     # Keep the independent schematic-derived reference, not a layout-derived one.
     reference = netlist.replace('**.subckt','.subckt').replace('**.ends','.ends')
     reference = re.sub(r'^\.end\s*$', '', reference, flags=re.M)
     (path/(name+'.schematic.spice')).write_text(reference)
-    # Full routing blockages with M3 pin openings; M4/M5 remain available.
+    # Full routing blockages with openings for M3 signal access and the M1
+    # abutment rails; M4/M5 remain available.
     lef = f'VERSION 5.8 ;\nBUSBITCHARS "[]" ;\nDIVIDERCHAR "/" ;\nMACRO {name}\n  CLASS BLOCK ;\n  ORIGIN 0 0 ;\n  FOREIGN {name} 0 0 ;\n  SIZE {width:.3f} BY {height:.3f} ;\n  SYMMETRY X Y ;\n'
     for pin, info in geometry.items():
-        lef += f'  PIN {pin}\n    DIRECTION {info["direction"] if info["use"]=="SIGNAL" else "INOUT"} ;\n    USE {info["use"]} ;\n    PORT\n      LAYER met3 ;\n      RECT '+ ' '.join(f'{v:.3f}' for v in info['rect_um'])+' ;\n    END\n  END '+pin+'\n'
+        lef += f'  PIN {pin}\n    DIRECTION {info["direction"] if info["use"]=="SIGNAL" else "INOUT"} ;\n    USE {info["use"]} ;\n'
+        if pin in power_rails:
+            lef += '    SHAPE ABUTMENT ;\n'
+        lef += '    PORT\n      LAYER met3 ;\n      RECT '+ ' '.join(f'{v:.3f}' for v in info['rect_um'])+' ;\n'
+        if pin in power_rails:
+            lef += '      LAYER met1 ;\n'
+            for rail in power_rails[pin]:
+                lef += '      RECT '+ ' '.join(f'{v:.3f}' for v in rail)+' ;\n'
+        lef += '    END\n  END '+pin+'\n'
     lef += '  OBS\n'
     for layer in ['li1','met1','met2','met3']:
         region = k.Region(k.DBox(0,0,width,height).to_itype(.001))
+        if layer == 'met1':
+            for rails in power_rails.values():
+                for rail in rails:
+                    region -= k.Region(k.DBox(*rail).to_itype(.001))
         if layer == 'met3':
             for info in geometry.values():
                 # Open a real access corridor from each pin to its macro edge.

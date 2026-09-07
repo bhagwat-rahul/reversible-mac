@@ -14,14 +14,17 @@ import re
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT/'src/macro_placement.cfg'
 # TTSKY26c SKY130 1x1 DIEAREA is 161 x 111.52 um.
-# TinyTapeout turns off multilayer PDN, so only met1 followpin rails exist.
-# A full-width empty band at the top is an unrepaired PDN-0178 channel; keep
-# a right-side stdcell street so those rails stay continuous bottom to top.
-LEFT, RIGHT, BOTTOM = 4.60, 156.40, 5.44
-X_GAP, Y_GAP = 1.38, 1.36
+# TinyTapeout turns off multilayer PDN, so the macros use double-height met1
+# supply rails aligned to the 2.72 um SKY130 followpin grid. Distribute eight
+# single-height stdcell rows between macro rows so the floorplan reaches the
+# top of the tile without breaking rail alignment, and keep a right-side street.
+LEFT, RIGHT, BOTTOM = 4.60, 156.40, 2.72
+X_GAP, Y_GAP = 1.38, 0.00
 PDN_STREET = 10.00
 PACK_RIGHT = RIGHT - PDN_STREET
 MAX_TOP = 111.52
+STDCELL_ROW = 2.72
+EXTRA_ROWS = 8
 
 
 def macros(netlist):
@@ -90,8 +93,10 @@ def main():
         rows.append(row)
         for r, row in enumerate(rows):
             x = LEFT
+            extra_rows_below = r * EXTRA_ROWS // (len(rows)-1)
+            y = BOTTOM + r*5.44 + extra_rows_below*STDCELL_ROW
             for name in row if r % 2 == 0 else reversed(row):
-                placements[name] = (round(x, 3), round(BOTTOM+r*(5.44+Y_GAP), 3), 'N')
+                placements[name] = (round(x, 3), round(y, 3), 'N')
                 x += sizes[cells[name]][0]+X_GAP
     validate(placements, cells, sizes)
     if not args.check:
