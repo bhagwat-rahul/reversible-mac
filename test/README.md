@@ -1,6 +1,6 @@
 # Reversible MAC top-level testbench
 
-The cocotb test drives the fixed TinyTapeout interface of `tt_um_reversible_mac`.
+The cocotb test drives the fixed TinyTapeout interface of `tt_um_bhagwat_rahul_reversible_mac`.
 It covers all 4-bit operand pairs, add/subtract cancellation, wraparound,
 valid/ena hold, synchronous reset priority and input-only bidirectional pins.
 
@@ -19,7 +19,7 @@ make -B
 ```
 
 To run gate-level simulation, first complete hardening and copy the final
-powered `tt_um_reversible_mac` netlist to `gate_level_netlist.v`. The ordinary
+powered `tt_um_bhagwat_rahul_reversible_mac` netlist to `gate_level_netlist.v`. The ordinary
 SKY130 library and the powered Boolean custom-cell models are loaded by the
 Makefile. This checks connectivity/function, not custom-cell timing signoff.
 
