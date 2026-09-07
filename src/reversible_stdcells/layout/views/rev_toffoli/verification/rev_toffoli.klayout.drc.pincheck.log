@@ -25,5 +25,5 @@ NO-Check ----        pwell:64/44/EMP   122/16/EMP    64/59/EMP    44/16/EMP     
          ----     inductor:82/24/EMP    82/25/EMP
        0 total error(s) among 0 error type(s), 33 checks, cell: 
 Writing report...
-VmPeak:	  679796 kB
-VmHWM:	  449812 kB
+VmPeak:	  679808 kB
+VmHWM:	  449456 kB

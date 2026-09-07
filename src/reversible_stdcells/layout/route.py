@@ -18,7 +18,7 @@ def route(terminals, nx, ny, reservations=None):
             reserved[point] = net
     rng = random.Random(130)
     nets = sorted(terminals, key=lambda n: -len(terminals[n]))
-    for attempt in range(5000):
+    for attempt in range(300):
         occupied = dict(reserved)
         edges = {n: set() for n in nets}
         failed = False

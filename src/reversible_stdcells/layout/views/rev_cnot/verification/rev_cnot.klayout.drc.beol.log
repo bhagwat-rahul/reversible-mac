@@ -18,7 +18,7 @@
     Elapsed: 0.000s  Memory: 436.00M
 "polygons" in: sky130A_mr.drc:175
     Polygons (raw): 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 436.00M
+    Elapsed: 0.010s  Memory: 436.00M
 "polygons" in: sky130A_mr.drc:176
     Polygons (raw): 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 436.00M
@@ -72,7 +72,7 @@
     Elapsed: 0.000s  Memory: 437.00M
 "polygons" in: sky130A_mr.drc:195
     Polygons (raw): 102 (flat)  102 (hierarchical)
-    Elapsed: 0.000s  Memory: 437.00M
+    Elapsed: 0.010s  Memory: 437.00M
 "polygons" in: sky130A_mr.drc:196
     Polygons (raw): 26 (flat)  26 (hierarchical)
     Elapsed: 0.000s  Memory: 437.00M
@@ -120,7 +120,7 @@
     Elapsed: 0.000s  Memory: 439.00M
 "polygons" in: sky130A_mr.drc:216
     Polygons (raw): 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 439.00M
+    Elapsed: 0.010s  Memory: 439.00M
 "polygons" in: sky130A_mr.drc:217
     Polygons (raw): 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 439.00M
@@ -153,7 +153,7 @@
     Elapsed: 0.000s  Memory: 439.00M
 "polygons" in: sky130A_mr.drc:227
     Polygons (raw): 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 439.00M
+    Elapsed: 0.000s  Memory: 440.00M
 "polygons" in: sky130A_mr.drc:228
     Polygons (raw): 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 440.00M
@@ -174,7 +174,7 @@
     Elapsed: 0.000s  Memory: 440.00M
 "polygons" in: sky130A_mr.drc:234
     Polygons (raw): 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 440.00M
+    Elapsed: 0.010s  Memory: 440.00M
 "polygons" in: sky130A_mr.drc:235
     Polygons (raw): 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 440.00M
@@ -228,7 +228,7 @@
     Elapsed: 0.000s  Memory: 441.00M
 "polygons" in: sky130A_mr.drc:252
     Polygons (raw): 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 441.00M
+    Elapsed: 0.010s  Memory: 441.00M
 "polygons" in: sky130A_mr.drc:253
     Polygons (raw): 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 442.00M
@@ -294,7 +294,7 @@ START: 67/20 (li)
     Elapsed: 0.000s  Memory: 444.00M
 "space" in: sky130A_mr.drc:897
     Edge pairs: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 446.00M
+    Elapsed: 0.010s  Memory: 446.00M
 "output" in: sky130A_mr.drc:897
     Edge pairs: 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 446.00M
@@ -315,7 +315,7 @@ START: 67/20 (li)
     Elapsed: 0.000s  Memory: 447.00M
 "interacting" in: sky130A_mr.drc:905
     Polygons (raw): 0 (flat)  0 (hierarchical)
-    Elapsed: 0.010s  Memory: 447.00M
+    Elapsed: 0.000s  Memory: 447.00M
 "output" in: sky130A_mr.drc:906
     Polygons (raw): 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 447.00M
@@ -361,7 +361,7 @@ START: 67/44 (mcon)
     Elapsed: 0.000s  Memory: 448.00M
 "drc" in: sky130A_mr.drc:938
     Polygons (raw): 0 (flat)  0 (hierarchical)
-    Elapsed: 0.010s  Memory: 449.00M
+    Elapsed: 0.000s  Memory: 449.00M
 "-" in: sky130A_mr.drc:939
     Polygons (raw): 42 (flat)  42 (hierarchical)
     Elapsed: 0.000s  Memory: 449.00M
@@ -382,10 +382,10 @@ START: 67/44 (mcon)
     Elapsed: 0.000s  Memory: 449.00M
 "drc" in: sky130A_mr.drc:953
     Edges: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 450.00M
+    Elapsed: 0.010s  Memory: 449.00M
 "output" in: sky130A_mr.drc:953
     Edges: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 450.00M
+    Elapsed: 0.000s  Memory: 449.00M
 "space" in: sky130A_mr.drc:957
     Edge pairs: 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 450.00M
@@ -412,7 +412,7 @@ START: 67/44 (mcon)
     Elapsed: 0.000s  Memory: 450.00M
 "-" in: sky130A_mr.drc:975
     Polygons (raw): 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 451.00M
+    Elapsed: 0.000s  Memory: 450.00M
 "output" in: sky130A_mr.drc:975
     Polygons (raw): 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 451.00M
@@ -420,13 +420,13 @@ END: 67/44 (mcon)
 START: 68/20 (m1)
 "width" in: sky130A_mr.drc:980
     Edge pairs: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 451.00M
+    Elapsed: 0.010s  Memory: 451.00M
 "output" in: sky130A_mr.drc:980
     Edge pairs: 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 451.00M
 "sized" in: sky130A_mr.drc:981
     Polygons (raw): 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 451.00M
+    Elapsed: 0.010s  Memory: 451.00M
 "sized" in: sky130A_mr.drc:981
     Polygons (raw): 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 451.00M
@@ -441,13 +441,13 @@ START: 68/20 (m1)
     Elapsed: 0.000s  Memory: 451.00M
 "-" in: sky130A_mr.drc:982
     Edges: 240 (flat)  240 (hierarchical)
-    Elapsed: 0.000s  Memory: 452.00M
+    Elapsed: 0.000s  Memory: 451.00M
 "edges" in: sky130A_mr.drc:983
     Edges: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 452.00M
+    Elapsed: 0.000s  Memory: 451.00M
 "merged" in: sky130A_mr.drc:983
     Polygons (raw): 26 (flat)  26 (hierarchical)
-    Elapsed: 0.000s  Memory: 452.00M
+    Elapsed: 0.000s  Memory: 451.00M
 "outside_part" in: sky130A_mr.drc:983
     Edges: 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 452.00M
@@ -462,7 +462,7 @@ START: 68/20 (m1)
     Elapsed: 0.000s  Memory: 452.00M
 "space" in: sky130A_mr.drc:992
     Edge pairs: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 452.00M
+    Elapsed: 0.010s  Memory: 452.00M
 "+" in: sky130A_mr.drc:991
     Edge pairs: 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 452.00M
@@ -474,7 +474,7 @@ START: 68/20 (m1)
     Elapsed: 0.000s  Memory: 452.00M
 "enclosing" in: sky130A_mr.drc:1006
     Edge pairs: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.010s  Memory: 453.00M
+    Elapsed: 0.000s  Memory: 453.00M
 "output" in: sky130A_mr.drc:1006
     Edge pairs: 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 453.00M
@@ -492,7 +492,7 @@ START: 68/20 (m1)
     Elapsed: 0.000s  Memory: 453.00M
 "output" in: sky130A_mr.drc:1025
     Edge pairs: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 453.00M
+    Elapsed: 0.010s  Memory: 453.00M
 "-" in: sky130A_mr.drc:1030
     Polygons (raw): 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 453.00M
@@ -504,7 +504,7 @@ START: 68/20 (m1)
     Elapsed: 0.000s  Memory: 453.00M
 "output" in: sky130A_mr.drc:1035
     Polygons (raw): 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 453.00M
+    Elapsed: 0.000s  Memory: 454.00M
 "holes" in: sky130A_mr.drc:1038
     Polygons (raw): 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 454.00M
@@ -516,7 +516,7 @@ START: 68/20 (m1)
     Elapsed: 0.000s  Memory: 454.00M
 "enclosing" in: sky130A_mr.drc:1051
     Edge pairs: 84 (flat)  84 (hierarchical)
-    Elapsed: 0.010s  Memory: 454.00M
+    Elapsed: 0.000s  Memory: 454.00M
 "second_edges" in: sky130A_mr.drc:1051
     Edges: 84 (flat)  84 (hierarchical)
     Elapsed: 0.000s  Memory: 454.00M
@@ -536,7 +536,7 @@ END: 68/20 (m1)
 START: 68/44 (via)
 "drc" in: sky130A_mr.drc:1067
     Polygons (raw): 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 454.00M
+    Elapsed: 0.000s  Memory: 455.00M
 "-" in: sky130A_mr.drc:1068
     Polygons (raw): 26 (flat)  26 (hierarchical)
     Elapsed: 0.000s  Memory: 455.00M
@@ -557,7 +557,7 @@ START: 68/44 (via)
     Elapsed: 0.000s  Memory: 455.00M
 "drc" in: sky130A_mr.drc:1084
     Edges: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.010s  Memory: 455.00M
+    Elapsed: 0.000s  Memory: 455.00M
 "output" in: sky130A_mr.drc:1084
     Edges: 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 455.00M
@@ -572,7 +572,7 @@ START: 68/44 (via)
     Elapsed: 0.000s  Memory: 455.00M
 "output" in: sky130A_mr.drc:1095
     Edge pairs: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 456.00M
+    Elapsed: 0.000s  Memory: 455.00M
 "drc" in: sky130A_mr.drc:1099
     Edge pairs: 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 456.00M
@@ -593,7 +593,7 @@ START: 68/44 (via)
     Elapsed: 0.000s  Memory: 456.00M
 "enclosing" in: sky130A_mr.drc:1111
     Edge pairs: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.010s  Memory: 456.00M
+    Elapsed: 0.000s  Memory: 456.00M
 "output" in: sky130A_mr.drc:1112
     Edge pairs: 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 456.00M
@@ -602,37 +602,37 @@ START: 68/44 (via)
     Elapsed: 0.000s  Memory: 456.00M
 "drc" in: sky130A_mr.drc:1115
     Edges: 104 (flat)  104 (hierarchical)
-    Elapsed: 0.000s  Memory: 457.00M
+    Elapsed: 0.010s  Memory: 456.00M
 "-" in: sky130A_mr.drc:1116
     Edges: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 457.00M
+    Elapsed: 0.000s  Memory: 456.00M
 "output" in: sky130A_mr.drc:1117
     Edges: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 457.00M
+    Elapsed: 0.000s  Memory: 456.00M
 "edges" in: sky130A_mr.drc:1121
     Edges: 240 (flat)  240 (hierarchical)
-    Elapsed: 0.000s  Memory: 457.00M
+    Elapsed: 0.000s  Memory: 456.00M
 "drc" in: sky130A_mr.drc:1122
     Edges: 104 (flat)  104 (hierarchical)
-    Elapsed: 0.000s  Memory: 457.00M
+    Elapsed: 0.000s  Memory: 456.00M
 "enclosing" in: sky130A_mr.drc:1122
     Edge pairs: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.010s  Memory: 457.00M
+    Elapsed: 0.000s  Memory: 456.00M
 "second_edges" in: sky130A_mr.drc:1123
     Edges: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 457.00M
+    Elapsed: 0.000s  Memory: 456.00M
 "width" in: sky130A_mr.drc:1125
     Edge pairs: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 457.00M
+    Elapsed: 0.000s  Memory: 456.00M
 "polygons" in: sky130A_mr.drc:1126
     Polygons (raw): 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 457.00M
+    Elapsed: 0.000s  Memory: 456.00M
 "interacting" in: sky130A_mr.drc:1126
     Polygons (raw): 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 457.00M
+    Elapsed: 0.000s  Memory: 456.00M
 "output" in: sky130A_mr.drc:1127
     Polygons (raw): 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 457.00M
+    Elapsed: 0.000s  Memory: 456.00M
 END: 68/44 (via)
 START: 69/20 (m2)
 "&" in: sky130A_mr.drc:1136
@@ -640,7 +640,7 @@ START: 69/20 (m2)
     Elapsed: 0.000s  Memory: 457.00M
 "width" in: sky130A_mr.drc:1137
     Edge pairs: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 457.00M
+    Elapsed: 0.010s  Memory: 457.00M
 "output" in: sky130A_mr.drc:1137
     Edge pairs: 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 457.00M
@@ -709,7 +709,7 @@ START: 69/20 (m2)
     Elapsed: 0.000s  Memory: 458.00M
 "enclosing" in: sky130A_mr.drc:1166
     Edge pairs: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.010s  Memory: 458.00M
+    Elapsed: 0.000s  Memory: 458.00M
 "output" in: sky130A_mr.drc:1166
     Edge pairs: 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 458.00M
@@ -801,7 +801,7 @@ START: 69/44 (via2)
     Elapsed: 0.000s  Memory: 459.00M
 "enclosing" in: sky130A_mr.drc:1233
     Edge pairs: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 459.00M
+    Elapsed: 0.010s  Memory: 459.00M
 "output" in: sky130A_mr.drc:1233
     Edge pairs: 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 459.00M
@@ -833,7 +833,7 @@ END: 69/44 (via2)
 START: 70/20 (m3)
 "width" in: sky130A_mr.drc:1253
     Edge pairs: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.010s  Memory: 460.00M
+    Elapsed: 0.000s  Memory: 460.00M
 "output" in: sky130A_mr.drc:1253
     Edge pairs: 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 460.00M
@@ -842,13 +842,13 @@ START: 70/20 (m3)
     Elapsed: 0.000s  Memory: 460.00M
 "sized" in: sky130A_mr.drc:1255
     Polygons (raw): 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 461.00M
+    Elapsed: 0.000s  Memory: 460.00M
 "snap" in: sky130A_mr.drc:1255
     Polygons (raw): 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 461.00M
+    Elapsed: 0.000s  Memory: 460.00M
 "&" in: sky130A_mr.drc:1255
     Polygons (raw): 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 461.00M
+    Elapsed: 0.000s  Memory: 460.00M
 "edges" in: sky130A_mr.drc:1256
     Edges: 44 (flat)  44 (hierarchical)
     Elapsed: 0.000s  Memory: 461.00M
@@ -872,31 +872,31 @@ START: 70/20 (m3)
     Elapsed: 0.000s  Memory: 461.00M
 "separation" in: sky130A_mr.drc:1265
     Edge pairs: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 461.00M
+    Elapsed: 0.000s  Memory: 460.00M
 "space" in: sky130A_mr.drc:1266
     Edge pairs: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 461.00M
+    Elapsed: 0.000s  Memory: 460.00M
 "+" in: sky130A_mr.drc:1265
     Edge pairs: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 461.00M
+    Elapsed: 0.000s  Memory: 460.00M
 "output" in: sky130A_mr.drc:1267
     Edge pairs: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 461.00M
+    Elapsed: 0.000s  Memory: 460.00M
 "enclosing" in: sky130A_mr.drc:1275
     Edge pairs: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.010s  Memory: 461.00M
+    Elapsed: 0.000s  Memory: 460.00M
 "output" in: sky130A_mr.drc:1275
     Edge pairs: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 461.00M
+    Elapsed: 0.000s  Memory: 460.00M
 "-" in: sky130A_mr.drc:1279
     Polygons (raw): 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 461.00M
+    Elapsed: 0.000s  Memory: 460.00M
 "output" in: sky130A_mr.drc:1279
     Polygons (raw): 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 461.00M
+    Elapsed: 0.000s  Memory: 460.00M
 "with_area" in: sky130A_mr.drc:1281
     Polygons (raw): 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 461.00M
+    Elapsed: 0.000s  Memory: 460.00M
 "output" in: sky130A_mr.drc:1281
     Polygons (raw): 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 461.00M
@@ -996,10 +996,10 @@ START: 71/20 (m4)
     Elapsed: 0.000s  Memory: 461.00M
 "&" in: sky130A_mr.drc:1341
     Polygons (raw): 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 462.00M
+    Elapsed: 0.000s  Memory: 461.00M
 "edges" in: sky130A_mr.drc:1342
     Edges: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 462.00M
+    Elapsed: 0.000s  Memory: 461.00M
 "-" in: sky130A_mr.drc:1342
     Edges: 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 462.00M
@@ -1029,7 +1029,7 @@ START: 71/20 (m4)
     Elapsed: 0.000s  Memory: 462.00M
 "space" in: sky130A_mr.drc:1354
     Edge pairs: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.000s  Memory: 462.00M
+    Elapsed: 0.010s  Memory: 462.00M
 "+" in: sky130A_mr.drc:1353
     Edge pairs: 0 (flat)  0 (hierarchical)
     Elapsed: 0.000s  Memory: 462.00M
@@ -1173,7 +1173,7 @@ START: 76/20 (pad)
     Elapsed: 0.000s  Memory: 462.00M
 "output" in: sky130A_mr.drc:1451
     Edge pairs: 0 (flat)  0 (hierarchical)
-    Elapsed: 0.010s  Memory: 462.00M
+    Elapsed: 0.000s  Memory: 462.00M
 END: 76/20 (pad)
 START: 81/10 (moduleCut)
 "output" in: sky130A_mr.drc:1457

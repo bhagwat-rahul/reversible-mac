@@ -3,9 +3,9 @@
 .subckt rev_not VDD VGND A Y
 X0 VGND A Y VGND sky130_fd_pr__nfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
 X1 VDD A Y VDD sky130_fd_pr__pfet_01v8 ad=0.3 pd=2.6 as=0.3 ps=2.6 w=1 l=0.15
-C0 VDD A 0.30605f
-C1 Y VDD 0.34411f
-C2 Y A 0.33474f
+C0 Y A 0.33474f
+C1 VDD A 0.30605f
+C2 Y VDD 0.34411f
 C3 Y VGND 0.72996f
 C4 VDD VGND 2.09727f
 .ends

@@ -154,7 +154,7 @@ def build(name, lib, directory):
         # Reserve the first two M3 tracks end-to-end for the supply nets. This
         # gives pdngen a macro-wide M3 pin to via into its vertical M4 straps
         # without allowing a signal route to cross and short either rail.
-        reservations = {(ix, iy, 1): net for net, iy in [('VDD', 0), ('VGND', 1)]
+        reservations = {(ix, iy, 1): net for net, iy in [('VDD', 0)]
                         for ix in range(nx)}
         geometry = {}
         for p in pins:
