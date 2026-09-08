@@ -49,9 +49,6 @@
   "PDN_MACRO_CONNECTIONS": ["u_mac\\..* VPWR VGND VDD VGND"],
   "PDN_CFG": "dir::pdn_cfg.tcl",
 
-  "//": "Keep substrate/well taps close in the narrow standard-cell channels around the macros.",
-  "FP_TAPCELL_DIST": 7,
-
   "//": "Hold slack margin - Increase them in case you are getting hold violations.",
   "PL_RESIZER_HOLD_SLACK_MARGIN": 0.1,
   "GRT_RESIZER_HOLD_SLACK_MARGIN": 0.05,
