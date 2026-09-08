@@ -3,19 +3,20 @@
 [INFO] Launching Magic DRC...
 [INFO] Launching KLayout DRC...
 ---
-[INFO] Magic DRC errors found! Check </foss/designs/current-designs/reversible-mac/src/reversible_stdcells/layout/views/rev_toffoli/verification/rev_toffoli.magic.drc/rev_toffoli.magic.drc.rpt>!
+[INFO] Magic DRC is clean!
 [INFO] KLayout FEOL DRC is clean!
-[INFO] KLayout 14 BEOL DRC errors found! Check </foss/designs/current-designs/reversible-mac/src/reversible_stdcells/layout/views/rev_toffoli/verification/rev_toffoli.klayout.drc.beol.xml>!
+[INFO] KLayout BEOL DRC is clean!
 [INFO] KLayout pin check DRC is clean!
 [INFO] KLayout zero-area DRC is clean!
 ---
-DRC ERRORS FOUND! Please check the output files!
+CONGRATULATIONS! No DRC errors in <rev_toffoli> found!
       .-"""""-.
     .'  _   _  '.
    /   (o) (o)   \
   |       <       |
-  |     _____     |
+  |    \_____/    |
    \             /
     '.         .'
       '-.....-'
 ---
+[DONE] Bye!

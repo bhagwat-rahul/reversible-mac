@@ -570,17 +570,5 @@
   </cell>
  </cells>
  <items>
-  <item>
-   <tags/>
-   <category>'m3.2'</category>
-   <cell>rev_cnot</cell>
-   <visited>false</visited>
-   <multiplicity>1</multiplicity>
-   <comment/>
-   <image/>
-   <values>
-    <value>edge-pair: (1.68,0.84;1.68,1.24)/(1.5,1.24;1.5,0.84)</value>
-   </values>
-  </item>
  </items>
 </report-database>

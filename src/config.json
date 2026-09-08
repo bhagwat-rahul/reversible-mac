@@ -40,10 +40,12 @@
     }
   },
   "MACRO_PLACEMENT_CFG": "dir::macro_placement.cfg",
-  "//": "Double-height macros have met1 rails aligned to the SKY130 followpin grid.",
-  "//": "Cut rows at macro boundaries so followpin rails bridge the routing gaps.",
-  "FP_MACRO_HORIZONTAL_HALO": 0,
-  "FP_MACRO_VERTICAL_HALO": 0,
+  "//": "Double-height macros expose aligned M1 rails and separated M3 supply pins.",
+  "//": "Small halos leave legal channels while the macro grid connects M3 pins to M4.",
+  "FP_MACRO_HORIZONTAL_HALO": 0.46,
+  "FP_MACRO_VERTICAL_HALO": 0.68,
+  "PDN_HORIZONTAL_HALO": 0.46,
+  "PDN_VERTICAL_HALO": 0.68,
   "PDN_MACRO_CONNECTIONS": ["u_mac\\..* VPWR VGND VDD VGND"],
   "PDN_CFG": "dir::pdn_cfg.tcl",
 
@@ -86,7 +88,11 @@
   "FP_IO_HLENGTH": 2,
   "FP_IO_VLENGTH": 2,
 
-  "FP_PDN_VPITCH": 38.87,
+  "//": "One narrow M4 VPWR/VGND pair per 4.6um macro-placement period.",
+  "FP_PDN_VWIDTH": 0.34,
+  "FP_PDN_VSPACING": 1.7,
+  "FP_PDN_VPITCH": 4.6,
+  "FP_PDN_VOFFSET": 2.19,
 
   "//": "Clock",
   "RUN_CTS": 1,

@@ -102,6 +102,28 @@ if { $::env(PDN_MULTILAYER) == 1 } {
         -spacing $::env(PDN_VSPACING) \
         -starts_with POWER \
         {*}$arg_list
+
+    # Tie the parallel M4 straps together in the open top channel on M3. This
+    # stays below TT's met5 frame resources while preventing each vertical
+    # strap from being an isolated power island.
+    define_pdn_grid \
+        -name backbone_grid \
+        -starts_with POWER \
+        -voltage_domain CORE
+
+    add_pdn_stripe \
+        -grid backbone_grid \
+        -layer met3 \
+        -width 0.4 \
+        -pitch 200 \
+        -offset 104.62 \
+        -spacing 0.5 \
+        -starts_with POWER \
+        -extend_to_boundary
+
+    add_pdn_connect \
+        -grid backbone_grid \
+        -layers "met3 $::env(PDN_VERTICAL_LAYER)"
 }
 
 if { $::env(PDN_ENABLE_RAILS) == 1 } {
@@ -165,3 +187,16 @@ if { $::env(PDN_CORE_RING) == 1 } {
         throw APPLICATION "PDN_CORE_RING cannot be used when PDN_MULTILAYER is set to false."
     }
 }
+
+# Treat each hard macro's M3 power pins as part of the grid and stitch them
+# directly to the aligned M4 straps above. No M5 grid is needed in a TT tile.
+define_pdn_grid \
+    -macro \
+    -default \
+    -name macro \
+    -starts_with POWER \
+    -halo "$::env(PDN_HORIZONTAL_HALO) $::env(PDN_VERTICAL_HALO)"
+
+add_pdn_connect \
+    -grid macro \
+    -layers "met3 $::env(PDN_VERTICAL_LAYER)"

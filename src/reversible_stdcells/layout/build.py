@@ -155,7 +155,10 @@ def build(name, lib, directory):
         for p in pins:
             net = aliases.get(p,p)
             is_output = p == 'Y' or p.endswith('_OUT')
-            ix, iy = (nx-1 if is_output else 0), pin_tracks[net]
+            # Separate the two M3 supply pins horizontally so alternating M4
+            # PDN straps can contact both nets without a horizontal M3 rail.
+            ix = nx-1 if is_output else 4 if p == 'VGND' else 0
+            iy = pin_tracks[net]
             x, y = point(ix,iy)
             terminal(net,ix,iy,1)
             box = [x-.3, y-.2, x+.3, y+.2]
@@ -168,10 +171,6 @@ def build(name, lib, directory):
         except RuntimeError:
             if margin == 1:
                 raise
-    geometry['VDD']['rect_um'][0] = 0
-    geometry['VDD']['rect_um'][2] = 1.50
-    geometry['VGND']['rect_um'][0] = 0
-    geometry['VGND']['rect_um'][2] = 1.50
     # Match the SKY130 HD followpin pattern: VGND at the lower boundary and
     # VDD overlapping the rail centered at y=2.72 um. These power-pin shapes
     # open matching holes in the conservative met1 obstruction below.
@@ -212,36 +211,25 @@ def build(name, lib, directory):
     reference = netlist.replace('**.subckt','.subckt').replace('**.ends','.ends')
     reference = re.sub(r'^\.end\s*$', '', reference, flags=re.M)
     (path/(name+'.schematic.spice')).write_text(reference)
-    # Full routing blockages with openings for M3 signal access and the M1
-    # abutment rails; M4/M5 remain available.
+    # Keep conservative full LI/M1 blockages. On M2/M3, expose the actual
+    # internal metal as OBS; the detailed router applies its spacing rules.
     lef = f'VERSION 5.8 ;\nBUSBITCHARS "[]" ;\nDIVIDERCHAR "/" ;\nMACRO {name}\n  CLASS BLOCK ;\n  ORIGIN 0 0 ;\n  FOREIGN {name} 0 0 ;\n  SIZE {width:.3f} BY {height:.3f} ;\n  SYMMETRY X Y ;\n'
     for pin, info in geometry.items():
         lef += f'  PIN {pin}\n    DIRECTION {info["direction"] if info["use"]=="SIGNAL" else "INOUT"} ;\n    USE {info["use"]} ;\n'
-        if pin in power_rails:
-            lef += '    SHAPE ABUTMENT ;\n'
-        lef += '    PORT\n      LAYER met3 ;\n      RECT '+ ' '.join(f'{v:.3f}' for v in info['rect_um'])+' ;\n'
-        if pin in power_rails:
-            lef += '      LAYER met1 ;\n'
-            for rail in power_rails[pin]:
-                lef += '      RECT '+ ' '.join(f'{v:.3f}' for v in rail)+' ;\n'
+        lef += '    PORT\n      LAYER met3 ;\n'
+        lef += '      RECT '+ ' '.join(f'{v:.3f}' for v in info['rect_um'])+' ;\n'
         lef += '    END\n  END '+pin+'\n'
     lef += '  OBS\n'
     for layer in ['li1','met1','met2','met3']:
-        region = k.Region(k.DBox(0,0,width,height).to_itype(.001))
-        if layer == 'met1':
-            for rails in power_rails.values():
-                for rail in rails:
-                    region -= k.Region(k.DBox(*rail).to_itype(.001))
+        boundary = k.Region(k.DBox(0,0,width,height).to_itype(.001))
+        if layer in ('met2', 'met3'):
+            region = k.Region(macro.top.begin_shapes_rec(
+                macro.layout.layer(*LAYERS[layer]))).merged() & boundary
+        else:
+            region = boundary
         if layer == 'met3':
             for info in geometry.values():
-                # Open a real access corridor from each pin to its macro edge.
-                # A closed hole inside a full obstruction would be unroutable.
-                b = k.DBox(*info['rect_um']).enlarged(.3)
-                if info['direction'] == 'OUTPUT':
-                    b.right = width
-                else:
-                    b.left = 0
-                region -= k.Region(b.to_itype(.001))
+                region -= k.Region(k.DBox(*info['rect_um']).enlarged(.3).to_itype(.001))
         lef += f'    LAYER {layer} ;\n'
         for polygon in region.decompose_trapezoids_to_region().each():
             b = polygon.bbox().to_dtype(.001)

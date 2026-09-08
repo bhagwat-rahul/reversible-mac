@@ -5,7 +5,7 @@
     "klayout_macro_drc": "PASS",
     "lvs": "PASS",
     "gds_oas_geometry": "IDENTICAL",
-    "gds_sha256": "58a0af3ddf4d2fc81b48f0e7f7025d8179f92a658e28fb4234780b3b0efe4809"
+    "gds_sha256": "49096cf00c2c7fa32bb9cb7d1bc355a3e53fd35cf24dc47435cfae367baec28a"
   },
   {
     "cell": "rev_cnot",
@@ -13,7 +13,7 @@
     "klayout_macro_drc": "PASS",
     "lvs": "PASS",
     "gds_oas_geometry": "IDENTICAL",
-    "gds_sha256": "96f6c22d06c19b9c9a91b433c60b8702599d19e9808edc1e6f065beda7440690"
+    "gds_sha256": "4602544a7f5f3928e8103fc0f83732507a64f415e220f50050df17cfec7c6f1d"
   },
   {
     "cell": "rev_toffoli",
@@ -21,6 +21,6 @@
     "klayout_macro_drc": "PASS",
     "lvs": "PASS",
     "gds_oas_geometry": "IDENTICAL",
-    "gds_sha256": "6edc73f26499fe308cef4d7cf86a11e2baf6c286b61ec32d59a39af2afc74b13"
+    "gds_sha256": "932094d00bebfe4913a10a29f270ecf18799d6001e7f06a07467173ca5261d04"
   }
 ]

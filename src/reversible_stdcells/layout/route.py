@@ -3,7 +3,7 @@ import heapq
 import random
 
 
-def route(terminals, nx, ny, reservations=None):
+def route(terminals, nx, ny):
     """Connect each net's grid terminals; reserve all terminals before routing.
 
     Node coordinates are (x, y, layer), with layer 0=M2 and 1=M3.
@@ -11,7 +11,7 @@ def route(terminals, nx, ny, reservations=None):
     nets must leave a vacant horizontal grid point for 0.3 um clearance.
     Retry net ordering, not geometry or electrical constraints.
     """
-    reserved = dict(reservations or {})
+    reserved = {}
     for net, points in terminals.items():
         for point in points:
             assert point not in reserved or reserved[point] == net
