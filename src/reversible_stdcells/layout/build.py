@@ -211,7 +211,7 @@ def build(name, lib, directory):
     reference = netlist.replace('**.subckt','.subckt').replace('**.ends','.ends')
     reference = re.sub(r'^\.end\s*$', '', reference, flags=re.M)
     (path/(name+'.schematic.spice')).write_text(reference)
-    # Keep conservative full LI/M1 blockages. On M2/M3, expose the actual
+    # Keep a conservative full LI blockage. On M1/M2/M3, expose the actual
     # internal metal as OBS; the detailed router applies its spacing rules.
     lef = f'VERSION 5.8 ;\nBUSBITCHARS "[]" ;\nDIVIDERCHAR "/" ;\nMACRO {name}\n  CLASS BLOCK ;\n  ORIGIN 0 0 ;\n  FOREIGN {name} 0 0 ;\n  SIZE {width:.3f} BY {height:.3f} ;\n  SYMMETRY X Y ;\n'
     for pin, info in geometry.items():
@@ -222,7 +222,7 @@ def build(name, lib, directory):
     lef += '  OBS\n'
     for layer in ['li1','met1','met2','met3']:
         boundary = k.Region(k.DBox(0,0,width,height).to_itype(.001))
-        if layer in ('met2', 'met3'):
+        if layer in ('met1', 'met2', 'met3'):
             region = k.Region(macro.top.begin_shapes_rec(
                 macro.layout.layer(*LAYERS[layer]))).merged() & boundary
         else:
