@@ -229,10 +229,7 @@ def build(name, lib, directory):
             region = boundary
         if layer == 'met3':
             for info in geometry.values():
-                # Leave one minimum-spacing margin around each access pin.  The
-                # former 0.3 um opening let unrelated top-level routes enter the
-                # macro and violate spacing to hidden internal M3 in the GDS.
-                region -= k.Region(k.DBox(*info['rect_um']).enlarged(.06).to_itype(.001))
+                region -= k.Region(k.DBox(*info['rect_um']).enlarged(.3).to_itype(.001))
         lef += f'    LAYER {layer} ;\n'
         for polygon in region.decompose_trapezoids_to_region().each():
             b = polygon.bbox().to_dtype(.001)
